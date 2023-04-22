@@ -1,4 +1,4 @@
-# Web3 Carrot School built by Funnyybuns | $BUN
+# Web3 Carrot School Move contracts built by Funnyybuns
 
 An on-chain representations of students progress in the Carrot School. At the end of each chapter, students will complete a quiz. When they complete the quiz, Carrot School will award them with a non-transferrable "achievement token" which will store their % score on-chain for that particular chapter. Then, students will have the option to merge this achievement token with their "profile certificate". This certificate will also be non-transferrable and will include the % score for each achievement token which they have merged.
 
