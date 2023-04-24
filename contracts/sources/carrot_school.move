@@ -27,6 +27,7 @@ module headmaster::carrot_school {
     const EQuizNotExist: u64 = 3;
     const EStudentRegistered: u64 = 4;
     const EOutOfAttempts: u64 = 5;
+    const ETimeLimitExceeded: u64 = 6;
     const EWrongAttempt: u64 = 7;
 
     const TEN_MINUTES: u64 = 600000;
