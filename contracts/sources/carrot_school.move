@@ -27,6 +27,9 @@ module headmaster::carrot_school {
     const EQuizNotExist: u64 = 3;
     const EStudentRegistered: u64 = 4;
     const EOutOfAttempts: u64 = 5;
+    const EWrongAttempt: u64 = 7;
+
+    const TEN_MINUTES: u64 = 600000;
 
     // Part 2: Struct definitions
     struct CARROT_SCHOOL has drop {}
@@ -70,10 +73,13 @@ module headmaster::carrot_school {
         total_quizzes: u64
     }
 
-    struct Attempts has key {
+    struct Attempt has key {
         id: UID,
         student: address,
+        chapter_number: u64,
         attempt_number: u64,
+        start_time_ms: u64,
+        end_time_ms: u64,
         question_indexes: vector<u64>
     }
 
@@ -213,6 +219,7 @@ module headmaster::carrot_school {
 
     public entry fun quiz_participate(
         student: &mut StudentInfo,
+        attempt: &Attempt,
         quizzes: &mut Quizzes,
         clock: &Clock,
         chapter_number: u64,
@@ -283,6 +290,7 @@ module headmaster::carrot_school {
     // ======= Randomness =======
     public entry fun generate_random_numbers_for_an_attempt(
         _student: &mut StudentInfo,
+        clock: &Clock,
         quizzes: &mut Quizzes,
         chapter_number: u64,
         ctx: &mut TxContext
