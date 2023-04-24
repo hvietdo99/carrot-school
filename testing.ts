@@ -284,9 +284,7 @@ tx.moveCall({
   typeArguments: [],
   arguments: [
     tx.object('Your StudentInfo object ID'),
-    tx.object(
-      '0x59a7cc459edbb256fd480afeb8d8dc421b69ab81bf760494966c60e277d92b64'
-    ),
+    tx.object('Your Attempt object ID'),
     tx.object(
       '0x33c9c3ae73a06c031dbdac6964f29ad132dd115f9087bcf1dec24133b98460d3'
     ),
