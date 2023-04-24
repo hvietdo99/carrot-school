@@ -29,6 +29,8 @@ module headmaster::carrot_school {
     const EOutOfAttempts: u64 = 5;
     const ETimeLimitExceeded: u64 = 6;
     const EWrongAttempt: u64 = 7;
+    const EWrongQuestion: u64 = 8;
+    const EQuestionJoined: u64 = 9;
 
     const TEN_MINUTES: u64 = 600000;
 
